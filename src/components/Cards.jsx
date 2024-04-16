@@ -1,14 +1,11 @@
 import Card from "./Card"
-import LifeLessons from "../assets/airbnb/cards/life-lessons.png"
-import Wedding from "../assets/airbnb/cards/wedding-photography.png"
-import Bike from "../assets/airbnb/cards/mountain-bike.png"
 
 function Cards() {
   const cards = [
     {
       id: 1,
       extraInfo: "Sold out",
-      imageSource: LifeLessons,
+      imageSource: "life-lessons.png",
       star: true,
       rating: 5.0,
       likes: 6,
@@ -20,7 +17,7 @@ function Cards() {
     {
       id: 2,
       extraInfo: "Online",
-      imageSource: Wedding,
+      imageSource: "wedding-photography.png",
       star: true,
       rating: 5.0,
       likes: 30,
@@ -31,7 +28,7 @@ function Cards() {
     },
     {
       id: 3,
-      imageSource: Bike,
+      imageSource: "mountain-bike.png",
       star: false,
       country: "USA",
       text: "Group mountain biking",
