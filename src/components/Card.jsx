@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 function Card({
   extraInfo,
   src,
+  alt,
   star,
   rating,
   likes,
@@ -16,8 +17,8 @@ function Card({
       <div className="image">
         {extraInfo && <span className="extra-info">{extraInfo}</span>}
         <img
-          src={`/scrimba-airbnb/${src}`}
-          alt={text}
+          src={`/scrimba-airbnb/cards/${src}`}
+          alt={alt}
         />
       </div>
       <div className="info">
@@ -70,6 +71,7 @@ function Card({
 Card.propTypes = {
   extraInfo: PropTypes.string,
   src: PropTypes.string,
+  alt: PropTypes.string,
   rating: PropTypes.number,
   star: PropTypes.bool,
   likes: PropTypes.number,
