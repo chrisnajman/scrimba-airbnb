@@ -26,14 +26,12 @@ A simple Scrimba React project, practising passing `props` from a parent to a ch
 
 For dynamic image paths, store the images in the `/public/` folder. You can put them in a sub-folder, in this case `cards/`.
 
-### `Cards.jsx`
+### `cardData.js`
 
-In `Cards.jsx` I'm using an array of objects to mimic a `JSON` file.
+This contains an array of objects, mimicking a `JSON` file:
 
-The image name is associated with the `image` key.
-
-```jsx
-const cards = [
+```JavaScript
+export default = [
   {
     // Other key/value pairs
     image: "life-lessons.png",
@@ -43,14 +41,36 @@ const cards = [
 ]
 ```
 
-I'm using the `src` `prop` in the `<Card />` component to display the image:
+### `Cards.jsx`
+
+In `Cards.jsx` I `map` the items in `cardData.js` to `const cards ...`:
+
+- The image name is associated with the `image` key.
+- I'm using the `src` `prop` in the `<Card />` component to display the image.
 
 ```jsx
-<Card
-  // Other props
-  src={card.image}
-  // Other props
-/>
+import cardData from "./cardData"
+
+const cards = cardData.map((card) => {
+  return (
+    <Card
+      // Other props
+      src={card.image}
+      // Other props
+    />
+  )
+})
+
+return (
+  <section
+    className="cards"
+    role="region"
+    aria-labelledby="card-list"
+    tabIndex="0"
+  >
+    <ul id="card-list">{cards}</ul>
+  </section>
+)
 ```
 
 ### `Card.jsx`
