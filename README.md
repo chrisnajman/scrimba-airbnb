@@ -24,7 +24,7 @@ A simple Scrimba React project, practising passing `props` from a parent to a ch
 
 ## Dynamic Image Paths
 
-For dynamic images paths, store images in the `/public/` folder.
+For dynamic image paths, store the images in the `/public/` folder. You can put them in a sub-folder, in this case `cards/`.
 
 ### `Cards.jsx`
 
