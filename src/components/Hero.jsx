@@ -1,4 +1,4 @@
-import HeroGridImage from "../assets/airbnb/hero-grid.png"
+import HeroGridImage from "../assets/hero-grid.png"
 
 function Hero() {
   return (
