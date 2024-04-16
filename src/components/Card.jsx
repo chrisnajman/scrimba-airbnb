@@ -16,7 +16,7 @@ function Card({
       <div className="image">
         {extraInfo && <span className="extra-info">{extraInfo}</span>}
         <img
-          src={`/scrimba-airbnb/src/assets/airbnb/cards/${src}`}
+          src={src}
           alt={text}
         />
       </div>
