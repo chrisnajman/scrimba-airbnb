@@ -1,5 +1,5 @@
 import Card from "./Card"
-// import LifeLessons from "../assets/airbnb/cards/life-lessons.png"
+import LifeLessons from "../assets/airbnb/cards/life-lessons.png"
 import Wedding from "../assets/airbnb/cards/wedding-photography.png"
 import Bike from "../assets/airbnb/cards/mountain-bike.png"
 
@@ -8,8 +8,7 @@ function Cards() {
     {
       id: 1,
       extraInfo: "Sold out",
-      imageSource:
-        "https://github.com/chrisnajman/images/blob/main/img/cezanne-mont-sainte-victoire-1897.jpg",
+      imageSource: LifeLessons,
       star: true,
       rating: 5.0,
       likes: 6,
