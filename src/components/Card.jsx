@@ -1,21 +1,26 @@
 import PropTypes from "prop-types"
 
 function Card({
-  extraInfo,
+  openSpots,
   src,
   alt,
-  star,
   rating,
   likes,
-  country,
-  text,
+  location,
+  title,
   price,
   unit,
 }) {
+  let badgeText
+  if (openSpots === 0) {
+    badgeText = "SOLD OUT"
+  } else if (location === "Online") {
+    badgeText = "ONLINE"
+  }
   return (
     <li className="card">
       <div className="image">
-        {extraInfo && <span className="extra-info">{extraInfo}</span>}
+        {badgeText && <span className="extra-info">{badgeText}</span>}
         <img
           src={`/scrimba-airbnb/cards/${src}`}
           alt={alt}
@@ -24,7 +29,7 @@ function Card({
       <div className="info">
         <div>
           <div className="status">
-            {star ? (
+            {rating > 0 ? (
               <svg
                 viewBox="0 0 12 11"
                 className="star star-active"
@@ -52,10 +57,10 @@ function Card({
               </span>
             )}
 
-            <span className="country">{country}</span>
+            <span className="location">{location}</span>
           </div>
         </div>
-        <h2 className="text">{text}</h2>
+        <h2 className="title">{title}</h2>
         <div className="pricing">
           <span className="price">From &#36;{price}</span>
           <span className="unit">
@@ -69,14 +74,13 @@ function Card({
 }
 
 Card.propTypes = {
-  extraInfo: PropTypes.string,
+  openSpots: PropTypes.number,
   src: PropTypes.string,
   alt: PropTypes.string,
   rating: PropTypes.number,
-  star: PropTypes.bool,
   likes: PropTypes.number,
-  country: PropTypes.string,
-  text: PropTypes.string,
+  location: PropTypes.string,
+  title: PropTypes.string,
   price: PropTypes.number,
   unit: PropTypes.string,
 }
