@@ -1,20 +1,21 @@
 import PropTypes from "prop-types"
 
 function Card({
-  openSpots,
-  src,
-  alt,
-  rating,
-  likes,
-  location,
-  title,
-  price,
-  unit,
+  // openSpots,
+  // src,
+  // alt,
+  // rating,
+  // likes,
+  // location,
+  // title,
+  // price,
+  // unit,
+  card,
 }) {
   let badgeText
-  if (openSpots === 0) {
+  if (card.openSpots === 0) {
     badgeText = "SOLD OUT"
-  } else if (location === "Online") {
+  } else if (card.location === "Online") {
     badgeText = "ONLINE"
   }
   return (
@@ -22,14 +23,14 @@ function Card({
       <div className="image">
         {badgeText && <span className="extra-info">{badgeText}</span>}
         <img
-          src={`/scrimba-airbnb/cards/${src}`}
-          alt={alt}
+          src={`/scrimba-airbnb/cards/${card.coverImg}`}
+          alt={card.imageAlt}
         />
       </div>
       <div className="info">
         <div>
           <div className="status">
-            {rating > 0 ? (
+            {card.stats.rating > 0 ? (
               <svg
                 viewBox="0 0 12 11"
                 className="star star-active"
@@ -49,23 +50,25 @@ function Card({
               </svg>
             )}
 
-            {rating && <span className="rating">{rating}</span>}
+            {card.stats.rating && (
+              <span className="rating">{card.stats.rating}</span>
+            )}
 
-            {likes && (
+            {card.stats.reviewCount && (
               <span className="likes">
-                ({likes}) <span>&#x2022;</span>
+                ({card.stats.reviewCount}) <span>&#x2022;</span>
               </span>
             )}
 
-            <span className="location">{location}</span>
+            <span className="location">{card.location}</span>
           </div>
         </div>
-        <h2 className="title">{title}</h2>
+        <h2 className="title">{card.title}</h2>
         <div className="pricing">
-          <span className="price">From &#36;{price}</span>
+          <span className="price">From &#36;{card.price}</span>
           <span className="unit">
             <span>/</span>
-            <span>{unit}</span>
+            <span>{card.unit}</span>
           </span>
         </div>
       </div>
@@ -74,15 +77,19 @@ function Card({
 }
 
 Card.propTypes = {
-  openSpots: PropTypes.number,
-  src: PropTypes.string,
-  alt: PropTypes.string,
-  rating: PropTypes.number,
-  likes: PropTypes.number,
-  location: PropTypes.string,
-  title: PropTypes.string,
-  price: PropTypes.number,
-  unit: PropTypes.string,
+  card: PropTypes.shape({
+    openSpots: PropTypes.number,
+    coverImg: PropTypes.string,
+    imageAlt: PropTypes.string,
+    stats: PropTypes.shape({
+      rating: PropTypes.number,
+      reviewCount: PropTypes.number,
+    }),
+    location: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    unit: PropTypes.string,
+  }),
 }
 
 export default Card

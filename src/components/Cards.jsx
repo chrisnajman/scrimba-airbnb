@@ -7,15 +7,7 @@ function Cards() {
     return (
       <Card
         key={card.id}
-        openSpots={card.openSpots}
-        src={card.coverImg}
-        alt={card.imageAlt}
-        rating={card.stats.rating}
-        likes={card.stats.reviewCount}
-        location={card.location}
-        title={card.title}
-        price={card.price}
-        unit={card.unit}
+        card={card}
       />
     )
   })
