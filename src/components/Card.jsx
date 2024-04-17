@@ -1,17 +1,6 @@
 import PropTypes from "prop-types"
 
-function Card({
-  // openSpots,
-  // src,
-  // alt,
-  // rating,
-  // likes,
-  // location,
-  // title,
-  // price,
-  // unit,
-  card,
-}) {
+function Card({ card }) {
   let badgeText
   if (card.openSpots === 0) {
     badgeText = "SOLD OUT"
@@ -25,6 +14,8 @@ function Card({
         <img
           src={`/scrimba-airbnb/cards/${card.coverImg}`}
           alt={card.imageAlt}
+          width="176"
+          loading="lazy"
         />
       </div>
       <div className="info">
