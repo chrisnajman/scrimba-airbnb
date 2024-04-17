@@ -34,7 +34,7 @@ This contains an array of objects, mimicking a `JSON` file:
 export default = [
   {
     // Other key/value pairs
-    image: "life-lessons.png",
+    image: "katie-zaferes.png",
     // Other key/value pairs
   },
   // More objects...
@@ -45,7 +45,7 @@ export default = [
 
 In `Cards.jsx` I `map` the items in `cardData.js` to `const cards ...`:
 
-- The image name is associated with the `image` key.
+- The image name is associated with the `coverImg` key.
 - I'm using the `src` `prop` in the `<Card />` component to display the image.
 
 ```jsx
@@ -55,7 +55,7 @@ const cards = cardData.map((card) => {
   return (
     <Card
       // Other props
-      src={card.image}
+      src={card.coverImg}
       // Other props
     />
   )

@@ -4,17 +4,18 @@ import cardData from "../cardData"
 
 function Cards() {
   const cards = cardData.map((card) => {
+    console.log(card.location)
     return (
       <Card
         key={card.id}
         extraInfo={card.extraInfo}
-        src={card.image}
+        src={card.coverImg}
         alt={card.imageAlt}
-        star={card.star}
-        rating={card.rating}
-        likes={card.likes}
-        country={card.country}
-        text={card.text}
+        star={card.stats.star}
+        rating={card.stats.rating}
+        likes={card.stats.reviewCount}
+        country={card.location}
+        text={card.title}
         price={card.price}
         unit={card.unit}
       />
