@@ -7,6 +7,7 @@ function Card({ card }) {
   } else if (card.location === "Online") {
     badgeText = "ONLINE"
   }
+
   return (
     <li className="card">
       <div className="image">
@@ -63,6 +64,15 @@ function Card({ card }) {
           </span>
         </div>
       </div>
+      {card.description && (
+        <details
+          id="description"
+          className="description"
+        >
+          <summary aria-controls="#description">Description</summary>
+          <p>{card.description}</p>
+        </details>
+      )}
     </li>
   )
 }
@@ -80,6 +90,7 @@ Card.propTypes = {
     title: PropTypes.string,
     price: PropTypes.number,
     unit: PropTypes.string,
+    description: PropTypes.string,
   }),
 }
 

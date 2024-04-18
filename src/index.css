@@ -131,9 +131,17 @@ img {
     gap: 0.5rem;
   }
 
-  .title {
+  & .title {
     font-weight: 400;
     font-size: 1.2rem;
+  }
+
+  & .description {
+    max-width: 17.6rem;
+    & summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
   }
 }
 
