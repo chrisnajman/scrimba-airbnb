@@ -1,6 +1,14 @@
 import PropTypes from "prop-types"
 
+import { useState } from "react"
+
 function Card({ card }) {
+  const [expanded, setExpanded] = useState("false")
+
+  const handleExpanded = () => {
+    setExpanded(expanded === "false" ? "true" : "false")
+  }
+
   let badgeText
   if (card.openSpots === 0) {
     badgeText = "SOLD OUT"
@@ -68,6 +76,8 @@ function Card({ card }) {
         <details
           id="description"
           className="description"
+          aria-expanded={expanded}
+          onClick={handleExpanded}
         >
           <summary aria-controls="#description">Description</summary>
           <p>{card.description}</p>
