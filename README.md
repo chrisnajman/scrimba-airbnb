@@ -34,51 +34,53 @@ This contains an array of objects, mimicking a `JSON` file:
 export default = [
   {
     // Other key/value pairs
-    image: "katie-zaferes.png",
+    coverImg: "katie-zaferes.png",
     // Other key/value pairs
   },
   // More objects...
 ]
 ```
 
-### `Cards.jsx`
-
-In `Cards.jsx` I `map` the items in `cardData.js` to `const cards ...`:
-
-- The image name is associated with the `coverImg` key.
-- I'm using the `src` `prop` in the `<Card />` component to display the image.
+### `Card.jsx`
 
 ```jsx
-import cardData from "./cardData"
+import cardData from "../cardData"
 
-const cards = cardData.map((card) => {
+function Cards() {
+  const cards = cardData.map((card) => {
+    return (
+      <Card
+        key={card.id}
+        card={card}
+      />
+    )
+  })
+
   return (
-    <Card
-      // Other props
-      src={card.coverImg}
-      // Other props
-    />
-  )
-})
-
-return (
-  <section
-    className="cards"
-    role="region"
-    aria-labelledby="card-list"
-    tabIndex="0"
-  >
+    // Other JSX
     <ul id="card-list">{cards}</ul>
-  </section>
-)
+    // Other JSX
+  )
+}
 ```
 
 ### `Card.jsx`
 
-In `Card.jsx`, I've set the path to the image from `src` as follows:
+In `Card.jsx`, I've set the path to the image from `coverImg` as follows:
 
 ```jsx
-<img src={`/scrimba-airbnb/cards/${src}`} />
+function Card({ card }) {
+  // code
+
+  return (
+    // Other JSX
+    // <img
+      src={`/scrimba-airbnb/cards/${card.coverImg}`}
+      // Other props and attributes
+    // />
+    // Other JSX
+  )
+}
 ```
 
 ### The `/public/` Folder
