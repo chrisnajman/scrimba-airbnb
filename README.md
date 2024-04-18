@@ -70,7 +70,7 @@ In `Card.jsx`, I've set the path to the image from `coverImg` as follows:
 
 ```jsx
 function Card({ card }) {
-  // code
+  // Other ode
 
   return (
     // Other JSX
