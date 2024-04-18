@@ -88,7 +88,7 @@ function Card({ card }) {
 The images are stored in `/public/cards`.
 
 > [!WARNING]
-> You must NOT include '/public/' in the file path, or the images won't display.
+> You must NOT include `'/public/'` in the file path, or the images won't display.
 
 ---
 
