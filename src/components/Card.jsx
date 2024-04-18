@@ -9,6 +9,11 @@ function Card({ card }) {
     setExpanded(expanded === "false" ? "true" : "false")
   }
 
+  const handleClose = () => {
+    const description = document.getElementById("description")
+    description.removeAttribute("open")
+  }
+
   let badgeText
   if (card.openSpots === 0) {
     badgeText = "SOLD OUT"
@@ -81,6 +86,7 @@ function Card({ card }) {
         >
           <summary aria-controls="#description">Description</summary>
           <p>{card.description}</p>
+          <button onClick={handleClose}>Close &#10006;</button>
         </details>
       )}
     </li>

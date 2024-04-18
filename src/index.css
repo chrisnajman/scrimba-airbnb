@@ -138,9 +138,30 @@ img {
 
   & .description {
     max-width: 17.6rem;
+    display: flex;
+    flex-direction: column;
     & summary {
       cursor: pointer;
       font-weight: 600;
+    }
+
+    & p {
+      margin-block-end: 1.5rem;
+      padding: 0.5rem 0.5rem 0 0.5rem;
+    }
+
+    & button {
+      margin-inline-start: auto;
+      cursor: pointer;
+      background-color: white;
+      padding: 0 0 0.3rem 0;
+      border-bottom: 1px solid transparent;
+      color: blue;
+      border: 0;
+
+      &:hover {
+        border-bottom: 1px solid blue;
+      }
     }
   }
 }
